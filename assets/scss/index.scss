@@ -1,1 +1,66 @@
+$menu-label-spacing: 1.75rem;
+
 @import "../bulma/bulma.sass";
+
+$aside-spacing: 1.5rem;
+
+html,
+body {
+    height: 100%;
+}
+
+* {
+    transition-property: color, background-color;
+    transition-duration: 0.4s;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+aside {
+    width: 250px;
+    background-color: black;
+    color: white;
+    padding: 0.5rem $aside-spacing;
+    display: flex;
+    flex-direction: column;
+
+    .menu {
+        font-size: 0.9rem;
+      }
+
+    .menu-list a {
+        color: white;
+        padding-left: $aside-spacing;
+        border-radius: 0;
+    }
+
+    .search-menu {
+        margin-bottom: 15px;
+    }
+
+    h1,
+    h2 {
+        color: white !important;
+    }
+
+    .subtitle {
+        margin-bottom: 2rem !important;
+    }
+
+    .title {
+        margin-top: 1rem;
+    }
+
+    .menu-list {
+        margin-left: -$aside-spacing;
+        margin-right: -$aside-spacing;
+    }
+
+    .menu-label {
+        margin-bottom: 0.25rem !important;
+    }
+}

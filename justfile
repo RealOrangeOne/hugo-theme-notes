@@ -1,6 +1,8 @@
+EXAMPLE_DIR := "exampleSite"
+
 # Recipes
 @default:
   just --list
 
-@example *ARGS:
-  hugo -s exampleSite {{ ARGS }}
+@hugo *ARGS:
+  hugo -s {{ EXAMPLE_DIR }} {{ ARGS }}
