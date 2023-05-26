@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Language" content="{{ .Site.Language.Lang }}" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+        <meta name="application-name" content="{{ .Site.Title }}" />
+        <title>{{ .Title }} :: {{ .Site.Title }}</title>
+
+        {{ $style := resources.Get "scss/index.scss" | toCSS | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+    </head>
+    <body>
+
+    </body>
+</html>
