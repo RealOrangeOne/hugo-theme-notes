@@ -1,0 +1,19 @@
+{{ define "main" }}
+    {{ partial "content-header.html" . }}
+
+    <hr />
+
+    {{ with .Content }}
+        <div class="content">
+            {{ . }}
+        </div>
+
+        <hr />
+    {{ end }}
+
+    <div class="items">
+        {{ range where .Site.RegularPages.ByTitle "Params.tags" "!=" nil }}
+            {{ partial "list-item.html" . }}
+        {{ end }}
+    </div>
+{{ end }}

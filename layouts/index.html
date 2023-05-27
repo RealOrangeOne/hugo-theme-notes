@@ -1,11 +1,30 @@
+
 {{ define "main" }}
+    {{ $pages := (first 10 (where .Site.RegularPages.ByLastmod "Params.tags" "!=" nil)) }}
+
     {{ partial "content-header.html" . }}
 
     <hr />
 
+    {{ with .Content }}
+        <div class="content">
+            {{ . }}
+        </div>
+
+        <hr />
+    {{ end }}
+
     <div class="items">
-        {{ range first 10 .Site.RegularPages.ByDate }}
+        {{ range $pages }}
             {{ partial "list-item.html" . }}
         {{ end }}
     </div>
+
+    {{ with .Site.GetPage "all" }}
+        <hr />
+
+        <div>
+            <p>Showing first {{ $pages | len }} notes - <a href="{{ .RelPermalink }}">{{ .LinkTitle }} &rarr;</a></p>
+        </div>
+    {{ end }}
 {{ end }}

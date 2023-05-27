@@ -7,6 +7,13 @@
     <ul class="menu-list search-menu">
         <li><a href="">SEARCH</a></li>
     </ul>
+
+    {{ with .Site.GetPage "all" }}
+        <ul class="menu-list">
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | upper }}</a></li>
+        </ul>
+    {{ end }}
+
     <p class="menu-label">
         Tags
     </p>
