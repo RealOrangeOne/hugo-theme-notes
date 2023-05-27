@@ -11,6 +11,10 @@
 
 {{ if .Params.tags }}
     <div class="page-link">
+        <p title="Modified">📅 <time datetime="{{ .Lastmod | time.Format "2006-01-02T15:04:05" }}">{{ .Lastmod | time.Format ":date_long" }}</time></p>
+    </div>
+
+    <div class="page-link">
         {{ $tagsPage := .Site.GetPage "/tags"}}
 
         <a class="{{ $tagsPage.RelPermalink }}">🏷️</a>
