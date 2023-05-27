@@ -1,6 +1,7 @@
 ---
 title: Code Snippets
 tags: [content]
+emoji: 🧑‍💻
 ---
 
 ```html

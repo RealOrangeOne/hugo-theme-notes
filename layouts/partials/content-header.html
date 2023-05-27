@@ -1,20 +1,31 @@
-<p class="title-icon is-size-1">🪣</p>
-<h1 class="title is-1">{{ .Title }}</h1>
-<h2 class="subtitle">A subtitle</h2>
 
-{{ if .Params.tags }}
-<div class="page-link">
-    {{ $tagsPage := .Site.GetPage "/tags"}}
-
-    <a class="{{ $tagsPage.RelPermalink }}">🏷️</a>
-    <span class="tags">
-        {{ range (.Params.tags | sort) }}
-            <a class="tag" title="{{ . }}" href="{{ $tagsPage.RelPermalink }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-    </span>
-</div>
+{{ if .Params.emoji }}
+    <p class="title-icon is-size-1">{{ .Params.emoji }}</p>
 {{ end }}
 
-<div class="page-link">
-    <p>🔗 <a href="">Something</a></p>
-</div>
+<h1 class="title is-1">{{ .Title }}</h1>
+
+{{ if .Params.subtitle }}
+    <h2 class="subtitle">{{ .Params.subtitle }}</h2>
+{{ end }}
+
+{{ if .Params.tags }}
+    <div class="page-link">
+        {{ $tagsPage := .Site.GetPage "/tags"}}
+
+        <a class="{{ $tagsPage.RelPermalink }}">🏷️</a>
+        <span class="tags">
+            {{ range (.Params.tags | sort) }}
+                <a class="tag" title="{{ . }}" href="{{ $tagsPage.RelPermalink }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </span>
+    </div>
+{{ end }}
+
+{{ if .Params.link }}
+    <div class="page-link">
+        {{ $url := urls.Parse .Params.link }}
+
+        <p>🔗 <a href="{{ .Params.link }}">{{ $url.Hostname }}</a></p>
+    </div>
+{{ end }}
