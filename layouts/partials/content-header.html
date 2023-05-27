@@ -16,7 +16,10 @@
         <a class="{{ $tagsPage.RelPermalink }}">🏷️</a>
         <span class="tags">
             {{ range (.Params.tags | sort) }}
-                <a class="tag" title="{{ . }}" href="{{ $tagsPage.RelPermalink }}{{ . | urlize }}">{{ . }}</a>
+                {{ $tagPage := $tagsPage.GetPage . }}
+                {{ $colour := partial "page-colour.html" $tagPage }}
+
+                <a class="tag" title="{{ $tagPage.Title }}" href="{{ $tagPage.RelPermalink }}" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>{{ $tagPage.Title }}</a>
             {{ end }}
         </span>
     </div>

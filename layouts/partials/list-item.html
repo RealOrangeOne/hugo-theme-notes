@@ -6,7 +6,9 @@
             {{ $tagsPage := .Site.GetPage "/tags"}}
 
             {{ range (.Params.tags | sort) }}
-                <span href="{{ $tagsPage.RelPermalink }}{{ . | urlize }}" class="tag" title="{{ . }}">{{ . }}</span>
+                {{ $tagPage := $tagsPage.GetPage . }}
+                {{ $colour := partial "page-colour.html" $tagPage }}
+                <span href="{{ $tagPage.RelPermalink }}" class="tag colored" title="{{ $tagPage.Title }}" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>{{ $tagPage.Title }}</span>
             {{ end }}
         </span>
     {{ end }}

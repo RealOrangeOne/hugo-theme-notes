@@ -1,0 +1,7 @@
+{{ $hash := md5 .RelPermalink }}
+
+{{ $r := mod (substr $hash 0 5 | printf "0x%s" | int) 255 }}
+{{ $g := mod (substr $hash 5 10 | printf "0x%s" | int) 255 }}
+{{ $b := mod (substr $hash 10 15 | printf "0x%s" | int) 255 }}
+
+{{ return (printf "rgba(%d, %d, %d, 0.5)" $r $g $b) }}
