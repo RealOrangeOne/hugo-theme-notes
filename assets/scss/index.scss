@@ -134,3 +134,18 @@ aside {
   border-radius: 1em !important;
   padding: 0 !important;
 }
+
+#toc-wrapper {
+  margin-bottom: 1rem;
+  cursor: pointer;
+
+  ul {
+    margin-top: 0.5rem;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

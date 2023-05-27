@@ -3,10 +3,8 @@
 
     <hr />
 
-    {{ with .Content }}
-        <div class="content">
-            {{ . }}
-        </div>
+    {{ if .Content }}
+        {{ partial "content.html" . }}
 
         <hr />
     {{ end }}

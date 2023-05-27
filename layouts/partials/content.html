@@ -1,0 +1,10 @@
+<div class="content">
+    {{ if gt (.TableOfContents | len) 32 }}
+        <details id="toc-wrapper">
+            <summary>On this page</summary>
+            {{ .TableOfContents }}
+        </details>
+    {{ end }}
+
+    {{ .Content }}
+</div>
