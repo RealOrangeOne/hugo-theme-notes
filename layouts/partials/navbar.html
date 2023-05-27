@@ -1,4 +1,4 @@
-<h1 class="is-4 title">{{ .Site.Title }}</h1>
+<h1 class="is-4 title"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></h1>
 {{ if .Site.Params.subtitle }}
 <h2 class="subtitle is-6">{{ .Site.Params.subtitle }}</h2>
 {{ end }}
