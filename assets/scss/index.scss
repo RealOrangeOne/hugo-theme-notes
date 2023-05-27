@@ -6,6 +6,7 @@ $aside-spacing: 1.5rem;
 html,
 body {
     height: 100%;
+    font-size: calc(1rem + 0.1vw);
 }
 
 * {
