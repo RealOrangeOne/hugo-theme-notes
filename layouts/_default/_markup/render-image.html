@@ -1,0 +1,20 @@
+{{ $destination := .Destination }}
+
+{{ $resource := .Page.Resources.GetMatch $destination }}
+
+{{ if $resource }}
+  {{ $destination = ($resource.Resize "1500x webp").RelPermalink }}
+{{ end }}
+
+<figure class="text-center">
+  <img src="{{ $destination | safeURL }}" alt="{{ .Text | plainify }}" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
+  <figcaption class="text-center">
+    <small>
+        {{ .Text | safeHTML }}
+
+        {{ if not $resource }}
+            (src: <a href="{{ $destination }}">{{ (urls.Parse $destination).Hostname }}</a>)
+        {{ end }}
+    </small>
+  </figcaption>
+</figure>
