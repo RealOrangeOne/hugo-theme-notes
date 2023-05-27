@@ -15,6 +15,9 @@
             <aside>
                 {{ partial "navbar.html" . }}
             </aside>
+            <div class="main-column">
+                {{ block "main" . }}{{ end }}
+            </div>
         </main>
     </body>
 </html>

@@ -64,3 +64,59 @@ aside {
         margin-bottom: 0.25rem !important;
     }
 }
+
+.main-column {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2.5rem;
+}
+
+.page-link {
+  display: flex;
+
+  + .page-link {
+    margin-top: 10px;
+  }
+
+  > a {
+    margin-right: 7px;
+  }
+}
+
+.title-icon {
+  margin-bottom: 10px;
+}
+
+
+.items {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: lightgrey;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: black;
+        }
+      }
+
+      + .item {
+        border-top: 0px;
+      }
+
+      .tags {
+        margin-left: auto;
+      }
+    }
+}
+
+.tag {
+    font-weight: initial;
+}

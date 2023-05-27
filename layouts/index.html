@@ -1,3 +1,11 @@
 {{ define "main" }}
+    {{ partial "content-header.html" . }}
 
+    <hr />
+
+    <div class="items">
+        {{ range first 10 .Site.RegularPages.ByDate }}
+            {{ partial "list-item.html" . }}
+        {{ end }}
+    </div>
 {{ end }}

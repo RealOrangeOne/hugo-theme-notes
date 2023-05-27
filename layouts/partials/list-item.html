@@ -1,0 +1,13 @@
+<a class="item" href="{{ .RelPermalink }}">
+    {{ .LinkTitle }}
+
+    {{ if .Params.tags }}
+        <span class="tags">
+            {{ $tagsPage := .Site.GetPage "/tags"}}
+
+            {{ range (.Params.tags | sort) }}
+                <span href="{{ $tagsPage.RelPermalink }}{{ . | urlize }}" class="tag" title="{{ . }}">{{ . }}</span>
+            {{ end }}
+        </span>
+    {{ end }}
+</a>
