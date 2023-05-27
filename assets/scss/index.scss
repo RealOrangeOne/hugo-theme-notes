@@ -21,18 +21,17 @@ main {
 
 aside {
     width: 250px;
-    background-color: black;
-    color: white;
+    background-color: $light;
+    color: $white;
     padding: 0.5rem $aside-spacing;
     display: flex;
     flex-direction: column;
 
     .menu {
         font-size: 0.9rem;
-      }
+    }
 
     .menu-list a {
-        color: white;
         padding-left: $aside-spacing;
         border-radius: 0;
     }
@@ -41,10 +40,8 @@ aside {
         margin-bottom: 15px;
     }
 
-    h1,
-    h2,
     h1 a {
-      color: white !important;
+      color: inherit;
     }
 
     .subtitle {
@@ -58,6 +55,10 @@ aside {
     .menu-list {
         margin-left: -$aside-spacing;
         margin-right: -$aside-spacing;
+
+        a:hover {
+            background-color: $grey-lighter;
+        }
     }
 
     .menu-label {
@@ -98,13 +99,18 @@ aside {
       align-items: center;
       padding: 8px;
       font-weight: bold;
+      color: $dark;
 
       &:hover {
-        background-color: lightgrey;
+        background-color: $grey-lighter;
       }
 
       + .item {
         border-top: 0px;
+      }
+
+      .tag {
+        color: $dark;
       }
 
       .tags {
