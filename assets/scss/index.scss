@@ -1,6 +1,5 @@
 @import "bulma-overrides";
 @import "../bulma/bulma.sass";
-@import "../bulma-prefers-dark/bulma-prefers-dark.sass";
 
 $aside-spacing: 1.5rem;
 
@@ -101,10 +100,6 @@ aside {
 
       &:hover {
         background-color: lightgrey;
-
-        @media (prefers-color-scheme: dark) {
-          background-color: black;
-        }
       }
 
       + .item {
