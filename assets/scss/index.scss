@@ -150,3 +150,13 @@ aside {
     }
   }
 }
+
+.content {
+  .anchor {
+    color: inherit;
+
+    &:hover {
+      color: $link;
+    }
+  }
+}
