@@ -1,6 +1,6 @@
 
 {{ if .Params.emoji }}
-    <p class="title-icon is-size-1">{{ .Params.emoji }}</p>
+    <p class="title-icon is-size-1">{{ partial "page-emoji.html" . }}</p>
 {{ end }}
 
 <h1 class="title is-1">{{ .Title }}</h1>
