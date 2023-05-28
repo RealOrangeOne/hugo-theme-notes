@@ -180,6 +180,11 @@ aside {
     font-family: $family-monospace;
     font-weight: $weight-medium;
     margin-right: 1.5rem;
+
+    span {
+      // HACK: Naive inverse threshold of the colour for optimum contrast
+      filter: contrast(1000) grayscale(100) invert(1);
+    }
   }
 
   .code-copy-tag {

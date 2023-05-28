@@ -1,6 +1,10 @@
+{{ $colour := partial "language-colour" . }}
+
 <div class="codeblock-wrapper">
     <div class="code-header">
-        <span class="tag language-tag">{{ .Type }}</span>
+        <span class="tag language-tag" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>
+            <span {{ printf "style='color: %s'" $colour | safeHTMLAttr }}>{{ .Type }}</span>
+        </span>
         <span class="tag code-copy-tag">📋</span>
     </div>
     {{ highlight .Inner .Type .Options }}
