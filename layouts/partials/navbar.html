@@ -4,10 +4,6 @@
 {{ end }}
 
 <div class="menu">
-    <ul class="menu-list search-menu">
-        <li><a href="">SEARCH</a></li>
-    </ul>
-
     {{ with .Site.GetPage "all" }}
         <ul class="menu-list">
             <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | upper }}</a></li>
@@ -36,7 +32,3 @@
         {{ end }}
     </ul>
 </div>
-
-<ul class="menu-list" style="margin-top: auto">
-    <li><a href="">All</a></li>
-</ul>
