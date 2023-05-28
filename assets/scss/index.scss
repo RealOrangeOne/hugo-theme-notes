@@ -167,3 +167,27 @@ aside {
     }
   }
 }
+
+.codeblock-wrapper {
+  position: relative;
+  margin-bottom: $content-block-margin-bottom;
+
+  .code-header {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .language-tag {
+    border-radius: 0;
+    font-family: $family-monospace;
+    font-weight: $weight-medium;
+    margin-right: 1.5rem;
+  }
+
+  .code-copy-tag {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

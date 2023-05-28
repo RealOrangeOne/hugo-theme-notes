@@ -21,5 +21,8 @@
                 </div>
             </div>
         </main>
+
+        {{ $script := resources.Get "js/index.js" | js.Build (dict "minify" true) | fingerprint }}
+        <script type="text/javascript" async src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
     </body>
 </html>
