@@ -70,11 +70,15 @@ aside {
 }
 
 .main-column {
+    margin-left: $aside-width;
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 5rem 2.5rem;
-    padding-left: calc(2.5rem + #{$aside-width});
+
+    .main-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 5rem 2.5rem;
+    }
 }
 
 .page-link {
