@@ -2,10 +2,10 @@
 @import "../bulma/bulma.sass";
 
 $aside-spacing: 1.5rem;
+$aside-width: 250px;
 
 html,
 body {
-    height: 100%;
     font-size: calc(1rem + 0.1vw);
 }
 
@@ -21,7 +21,9 @@ main {
 }
 
 aside {
-    width: 250px;
+    width: $aside-width;
+    position: fixed;
+    height: 100%;
     background-color: $light;
     color: $white;
     padding: 0.5rem $aside-spacing;
@@ -72,6 +74,7 @@ aside {
     max-width: 900px;
     margin: 0 auto;
     padding: 5rem 2.5rem;
+    padding-left: calc(2.5rem + #{$aside-width});
 }
 
 .page-link {
