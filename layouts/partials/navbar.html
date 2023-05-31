@@ -4,12 +4,6 @@
 {{ end }}
 
 <div class="menu">
-    {{ with .Site.GetPage "all" }}
-        <ul class="menu-list">
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | upper }}</a></li>
-        </ul>
-    {{ end }}
-
     <p class="menu-label">
         Tags
     </p>
@@ -30,5 +24,17 @@
         {{ range .Site.Sections.ByTitle }}
             <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
         {{ end }}
+    </ul>
+</div>
+
+<div class="menu mt-auto">
+
+    <ul class="menu-list">
+        {{ with .Site.GetPage "all" }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | upper }}</a></li>
+        {{ end }}
+
+        {{ $latestMod := index (where .Site.RegularPages.ByLastmod "Params.tags" "!=" nil) 0 }}
+        <li><a>Updated: {{ partial "time" $latestMod.Lastmod }}</a></li>
     </ul>
 </div>
