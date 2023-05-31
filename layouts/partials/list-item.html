@@ -9,10 +9,7 @@
 
             {{ range (.Params.tags | sort) }}
                 {{ $tagPage := $tagsPage.GetPage . }}
-                {{ $colour := partial "page-colour.html" $tagPage }}
-                <span href="{{ $tagPage.RelPermalink }}" class="tag colored" title="{{ $tagPage.Title }}" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>
-                    {{ $tagPage.Title }}
-                </span>
+                {{ partial "tag-pill" $tagPage }}
             {{ end }}
         </span>
     {{ end }}

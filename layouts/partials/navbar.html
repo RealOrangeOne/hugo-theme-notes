@@ -17,7 +17,7 @@
         {{ range .Site.Taxonomies.tags }}
             {{ $colour := partial "page-colour.html" .Page }}
             <li><a href="{{ .Page.RelPermalink }}">
-                <span class="tag item-pill colored" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}></span>
+                <span class="tag item-pill" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}></span>
 
                 {{ .Page.LinkTitle }}
             </a></li>

@@ -1,0 +1,5 @@
+{{ $colour := partial "page-colour.html" . }}
+
+<span class="tag" title="{{ .Title }}" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>
+    {{ .Title }}
+</span>

@@ -21,9 +21,8 @@
         <span class="tags">
             {{ range (.Params.tags | sort) }}
                 {{ $tagPage := $tagsPage.GetPage . }}
-                {{ $colour := partial "page-colour.html" $tagPage }}
 
-                <a class="tag" title="{{ $tagPage.Title }}" href="{{ $tagPage.RelPermalink }}" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>{{ $tagPage.Title }}</a>
+                {{ partial "tag-pill-link" $tagPage }}
             {{ end }}
         </span>
     </div>

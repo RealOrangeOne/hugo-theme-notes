@@ -1,0 +1,5 @@
+{{ $colour := partial "page-colour.html" . }}
+
+<a class="tag" title="{{ .Title }}" href="{{ .RelPermalink }}" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}>
+    {{ .Title }}
+</a>
