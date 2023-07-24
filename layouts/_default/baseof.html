@@ -11,9 +11,11 @@
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
     </head>
     <body>
+        {{ partial "navbar.html" . }}
+
         <main>
             <aside>
-                {{ partial "navbar.html" . }}
+                {{ partial "sidebar.html" . }}
             </aside>
             <div class="main-column">
                 <div class="main-wrapper">

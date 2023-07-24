@@ -3,6 +3,7 @@
 
 $aside-spacing: 1.5rem;
 $aside-width: 300px;
+$mobile-nav-min: $desktop;
 
 html,
 body {
@@ -29,6 +30,10 @@ aside {
     padding: 0.5rem $aside-spacing;
     display: flex;
     flex-direction: column;
+
+    @include until($mobile-nav-min) {
+        display: none;
+    }
 
     .menu {
         font-size: 0.9rem;
@@ -66,7 +71,10 @@ aside {
 }
 
 .main-column {
-    margin-left: $aside-width;
+    @include from($mobile-nav-min) {
+        margin-left: $aside-width;
+    }
+
     width: 100%;
 
     .main-wrapper {
@@ -190,5 +198,35 @@ aside {
   .code-copy-tag {
     background-color: transparent;
     cursor: pointer;
+  }
+}
+
+.navbar {
+  @include from($mobile-nav-min) {
+    display: none;
+  }
+
+  .navbar-menu {
+      padding: 0.75rem $aside-spacing;
+  }
+
+  .navbar-start, .navbar-end {
+      font-size: 0.9rem;
+  }
+
+  a.navbar-item:hover {
+    background-color: $grey-lighter;
+    color: unset;
+  }
+
+  .navbar-end {
+    margin-top: 10px;
+  }
+
+  .menu-label {
+      :not(:first-of-type) {
+          margin-top: 1.25rem;
+      }
+      margin-bottom: 0.25rem !important;
   }
 }

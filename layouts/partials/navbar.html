@@ -1,40 +1,43 @@
-<h1 class="is-5 title"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></h1>
-{{ if .Site.Params.subtitle }}
-<h2 class="subtitle is-6">{{ .Site.Params.subtitle }}</h2>
-{{ end }}
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ .Site.Home.RelPermalink }}">
+      <h1 class="is-5 title">{{ .Site.Title }}</h1>
+    </a>
 
-<div class="menu">
-    <p class="menu-label">
-        Tags
-    </p>
-    <ul class="menu-list">
+    <a role="button" class="navbar-burger" id="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mobileNavbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="mobileNavbar" class="navbar-menu has-background-light">
+    <div class="navbar-start">
+        <p class="menu-label">
+            Tags
+        </p>
         {{ range .Site.Taxonomies.tags }}
             {{ $colour := partial "page-colour.html" .Page }}
-            <li><a href="{{ .Page.RelPermalink }}">
+            <a class="navbar-item" href="{{ .Page.RelPermalink }}">
                 <span class="tag item-pill" {{ printf "style='background-color: %s'" $colour | safeHTMLAttr }}></span>
 
                 {{ .Page.LinkTitle }}
-            </a></li>
+            </a>
         {{ end }}
-    </ul>
-    <p class="menu-label">
-        Sections
-    </p>
-    <ul class="menu-list">
+
+        <p class="menu-label">
+            Sections
+        </p>
         {{ range .Site.Sections.ByTitle }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+            <a class="navbar-item" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{ end }}
-    </ul>
-</div>
-
-<div class="menu mt-auto">
-
-    <ul class="menu-list">
+    </div>
+    <div class="navbar-end">
         {{ with .Site.GetPage "all" }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | upper }}</a></li>
+            <a class="navbar-item" href="">
+                {{ .LinkTitle | upper }}
+            </a>
         {{ end }}
-
-        {{ $latestMod := index (where .Site.RegularPages.ByLastmod "Params.tags" "!=" nil) 0 }}
-        <li><a>Updated: {{ partial "time" $latestMod.Lastmod }}</a></li>
-    </ul>
-</div>
+    </div>
+  </div>
+</nav>
