@@ -9,6 +9,10 @@
 
         {{ $style := resources.Get "scss/index.scss" | toCSS | minify | fingerprint }}
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+
+        {{ range .AlternativeOutputFormats }}
+            <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+        {{ end }}
     </head>
     <body>
         {{ partial "navbar.html" . }}
