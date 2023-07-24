@@ -13,6 +13,8 @@
         {{ range .AlternativeOutputFormats }}
             <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
         {{ end }}
+
+        <link rel="canonical" href="{{ .Permalink }}" />
     </head>
     <body>
         {{ partial "navbar.html" . }}
