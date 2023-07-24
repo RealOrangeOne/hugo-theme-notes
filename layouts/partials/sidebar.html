@@ -36,5 +36,7 @@
 
         {{ $latestMod := index (where .Site.RegularPages.ByLastmod "Params.tags" "!=" nil) 0 }}
         <li><a>Updated: {{ partial "time" $latestMod.Lastmod }}</a></li>
+
+        <li class="is-family-code is-size-7"><a href="https://github.com/RealOrangeOne/hugo-theme-notes/">🧑‍💻 Powered by hugo-theme-notes</a></li>
     </ul>
 </div>
