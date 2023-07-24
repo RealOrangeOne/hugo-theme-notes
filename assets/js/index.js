@@ -20,9 +20,7 @@ window.addEventListener("load", function () {
                 });
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     const navbarBurger = document.getElementById("navbar-burger");
 
     navbarBurger.addEventListener('click', () => {
