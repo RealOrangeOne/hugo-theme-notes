@@ -1,6 +1,10 @@
-
 {{ define "main" }}
-    {{ $pages := (first 10 (where .Site.RegularPages.ByLastmod "Params.tags" "!=" nil)) }}
+    {{ $pages := where .Site.RegularPages.ByLastmod "Params.tags" "!=" nil }}
+    {{ $allPage := .Site.GetPage "all" }}
+
+    {{ if $allPage }}
+        {{ $pages = (first .Params.show_pages $pages) }}
+    {{ end }}
 
     {{ partial "content-header.html" . }}
 
@@ -18,7 +22,7 @@
         {{ end }}
     </div>
 
-    {{ with .Site.GetPage "all" }}
+    {{ with $allPage }}
         <hr />
 
         <div>
