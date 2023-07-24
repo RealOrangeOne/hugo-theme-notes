@@ -1,3 +1,8 @@
+{{ if not .IsHome  }}
+    {{ if not .Parent.IsHome }}
+        {{ partial "breadcrumbs/index" . }}
+    {{ end }}
+{{ end }}
 
 {{ if .Params.emoji }}
     <p class="title-icon is-size-1">{{ partial "page-emoji.html" . }}</p>

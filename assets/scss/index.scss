@@ -230,3 +230,13 @@ aside {
       margin-bottom: 0.25rem !important;
   }
 }
+
+nav.breadcrumb {
+  a {
+    color: $dark;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

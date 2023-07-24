@@ -1,0 +1,6 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{{ .Site.Home.RelPermalink }}">🏠</a></li>
+    {{ partial "breadcrumbs/item.html" (dict "page" . "current" .) }}
+  </ul>
+</nav>
