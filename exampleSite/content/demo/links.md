@@ -1,6 +1,7 @@
 ---
 title: Links
 tags: [content]
+link: https://theorangeone.net
 ---
 
 [Empty link]()
