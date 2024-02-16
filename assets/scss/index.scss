@@ -10,11 +10,6 @@ body {
     font-size: calc(1rem + 0.1vw);
 }
 
-* {
-    transition-property: color, background-color;
-    transition-duration: 0.4s;
-}
-
 main {
     display: flex;
     flex-direction: row;
